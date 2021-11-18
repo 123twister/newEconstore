@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1963F8AFA27A68791E9C04CC /* Pods_eCONSTORE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2CB8E35F1BD1F4C43B1D7F8 /* Pods_eCONSTORE.framework */; };
+		E9232CDD27462F8800BDA32B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9232CDC27462F8800BDA32B /* GoogleService-Info.plist */; };
 		E9DBFE572745995900F33717 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBFE562745995900F33717 /* AppDelegate.swift */; };
 		E9DBFE592745995900F33717 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBFE582745995900F33717 /* SceneDelegate.swift */; };
 		E9DBFE5B2745995900F33717 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBFE5A2745995900F33717 /* ViewController.swift */; };
@@ -17,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2EDDE09C1495A248FE30A186 /* Pods-eCONSTORE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eCONSTORE.debug.xcconfig"; path = "Target Support Files/Pods-eCONSTORE/Pods-eCONSTORE.debug.xcconfig"; sourceTree = "<group>"; };
+		E03953C30D45037BE8D54BA2 /* Pods-eCONSTORE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eCONSTORE.release.xcconfig"; path = "Target Support Files/Pods-eCONSTORE/Pods-eCONSTORE.release.xcconfig"; sourceTree = "<group>"; };
+		E9232CDC27462F8800BDA32B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E9DBFE532745995900F33717 /* eCONSTORE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eCONSTORE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9DBFE562745995900F33717 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9DBFE582745995900F33717 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +31,7 @@
 		E9DBFE622745995C00F33717 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9DBFE652745995C00F33717 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9DBFE672745995C00F33717 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2CB8E35F1BD1F4C43B1D7F8 /* Pods_eCONSTORE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eCONSTORE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +39,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1963F8AFA27A68791E9C04CC /* Pods_eCONSTORE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		310A9F41EC6002EBB0604B8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2CB8E35F1BD1F4C43B1D7F8 /* Pods_eCONSTORE.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D166CF9E4F8A3FF9E72C1D5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2EDDE09C1495A248FE30A186 /* Pods-eCONSTORE.debug.xcconfig */,
+				E03953C30D45037BE8D54BA2 /* Pods-eCONSTORE.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E9DBFE4A2745995900F33717 = {
 			isa = PBXGroup;
 			children = (
 				E9DBFE552745995900F33717 /* eCONSTORE */,
 				E9DBFE542745995900F33717 /* Products */,
+				8D166CF9E4F8A3FF9E72C1D5 /* Pods */,
+				310A9F41EC6002EBB0604B8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +92,7 @@
 				E9DBFE622745995C00F33717 /* Assets.xcassets */,
 				E9DBFE642745995C00F33717 /* LaunchScreen.storyboard */,
 				E9DBFE672745995C00F33717 /* Info.plist */,
+				E9232CDC27462F8800BDA32B /* GoogleService-Info.plist */,
 				E9DBFE5F2745995900F33717 /* eCONSTORE.xcdatamodeld */,
 			);
 			path = eCONSTORE;
@@ -77,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9DBFE6A2745995C00F33717 /* Build configuration list for PBXNativeTarget "eCONSTORE" */;
 			buildPhases = (
+				F41C0563F2B33504AFFC5980 /* [CP] Check Pods Manifest.lock */,
 				E9DBFE4F2745995900F33717 /* Sources */,
 				E9DBFE502745995900F33717 /* Frameworks */,
 				E9DBFE512745995900F33717 /* Resources */,
+				DAE19C77D7ED6D689DE35959 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,10 +160,53 @@
 				E9DBFE662745995C00F33717 /* LaunchScreen.storyboard in Resources */,
 				E9DBFE632745995C00F33717 /* Assets.xcassets in Resources */,
 				E9DBFE5E2745995900F33717 /* Main.storyboard in Resources */,
+				E9232CDD27462F8800BDA32B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DAE19C77D7ED6D689DE35959 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-eCONSTORE/Pods-eCONSTORE-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-eCONSTORE/Pods-eCONSTORE-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-eCONSTORE/Pods-eCONSTORE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F41C0563F2B33504AFFC5980 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-eCONSTORE-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E9DBFE4F2745995900F33717 /* Sources */ = {
@@ -287,6 +360,7 @@
 		};
 		E9DBFE6B2745995C00F33717 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EDDE09C1495A248FE30A186 /* Pods-eCONSTORE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -306,6 +380,7 @@
 		};
 		E9DBFE6C2745995C00F33717 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E03953C30D45037BE8D54BA2 /* Pods-eCONSTORE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
