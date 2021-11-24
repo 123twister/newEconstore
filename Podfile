@@ -7,5 +7,8 @@ target 'eCONSTORE' do
 
   # Pods for eCONSTORE
 pod 'Firebase/Analytics'
+pod 'Firebase/Auth'
+pod 'Firebase/Core'
+pod 'Firebase/Firestore'
 
 end

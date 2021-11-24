@@ -3,12 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1963F8AFA27A68791E9C04CC /* Pods_eCONSTORE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2CB8E35F1BD1F4C43B1D7F8 /* Pods_eCONSTORE.framework */; };
 		E9232CDD27462F8800BDA32B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9232CDC27462F8800BDA32B /* GoogleService-Info.plist */; };
+		E99CE76327470B8600380330 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99CE76227470B8600380330 /* LoginViewController.swift */; };
+		E99CE76527470B9400380330 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99CE76427470B9400380330 /* SignUpViewController.swift */; };
+		E99CE76727470BA100380330 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99CE76627470BA100380330 /* ForgotPasswordViewController.swift */; };
 		E9DBFE572745995900F33717 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBFE562745995900F33717 /* AppDelegate.swift */; };
 		E9DBFE592745995900F33717 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBFE582745995900F33717 /* SceneDelegate.swift */; };
 		E9DBFE5B2745995900F33717 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DBFE5A2745995900F33717 /* ViewController.swift */; };
@@ -22,6 +25,9 @@
 		2EDDE09C1495A248FE30A186 /* Pods-eCONSTORE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eCONSTORE.debug.xcconfig"; path = "Target Support Files/Pods-eCONSTORE/Pods-eCONSTORE.debug.xcconfig"; sourceTree = "<group>"; };
 		E03953C30D45037BE8D54BA2 /* Pods-eCONSTORE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eCONSTORE.release.xcconfig"; path = "Target Support Files/Pods-eCONSTORE/Pods-eCONSTORE.release.xcconfig"; sourceTree = "<group>"; };
 		E9232CDC27462F8800BDA32B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E99CE76227470B8600380330 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E99CE76427470B9400380330 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		E99CE76627470BA100380330 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		E9DBFE532745995900F33717 /* eCONSTORE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eCONSTORE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9DBFE562745995900F33717 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9DBFE582745995900F33717 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,8 +66,18 @@
 				2EDDE09C1495A248FE30A186 /* Pods-eCONSTORE.debug.xcconfig */,
 				E03953C30D45037BE8D54BA2 /* Pods-eCONSTORE.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E99CE76127470B5200380330 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E9DBFE5A2745995900F33717 /* ViewController.swift */,
+				E99CE76227470B8600380330 /* LoginViewController.swift */,
+				E99CE76427470B9400380330 /* SignUpViewController.swift */,
+				E99CE76627470BA100380330 /* ForgotPasswordViewController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		E9DBFE4A2745995900F33717 = {
@@ -85,9 +101,9 @@
 		E9DBFE552745995900F33717 /* eCONSTORE */ = {
 			isa = PBXGroup;
 			children = (
+				E99CE76127470B5200380330 /* Authentication */,
 				E9DBFE562745995900F33717 /* AppDelegate.swift */,
 				E9DBFE582745995900F33717 /* SceneDelegate.swift */,
-				E9DBFE5A2745995900F33717 /* ViewController.swift */,
 				E9DBFE5C2745995900F33717 /* Main.storyboard */,
 				E9DBFE622745995C00F33717 /* Assets.xcassets */,
 				E9DBFE642745995C00F33717 /* LaunchScreen.storyboard */,
@@ -213,9 +229,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E99CE76527470B9400380330 /* SignUpViewController.swift in Sources */,
+				E99CE76727470BA100380330 /* ForgotPasswordViewController.swift in Sources */,
 				E9DBFE612745995900F33717 /* eCONSTORE.xcdatamodeld in Sources */,
 				E9DBFE5B2745995900F33717 /* ViewController.swift in Sources */,
 				E9DBFE572745995900F33717 /* AppDelegate.swift in Sources */,
+				E99CE76327470B8600380330 /* LoginViewController.swift in Sources */,
 				E9DBFE592745995900F33717 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
