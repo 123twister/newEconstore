@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import SVProgressHUD
 
 class SignUpViewController: UIViewController {
     
@@ -95,9 +96,13 @@ class SignUpViewController: UIViewController {
             alertController.addAction(okBtn)
             present(alertController, animated: true, completion: nil)
         } else {
+            SVProgressHUD.show()
+            // CREATING USER LOGIN ACCOUNT AND SAVING THE INFORMATION INTO DATABASE
             Auth.auth().createUser(withEmail: email ?? "", password: password ?? "") { (result, error) in
                 
+                // HANDLING ERRORS
                 if let error = error {
+                    SVProgressHUD.dismiss()
                     let alertController = UIAlertController(title: "Alert", message: error.localizedDescription, preferredStyle: .alert)
                     let okBtn = UIAlertAction(title: "Ok", style: .default, handler: nil)
                     
@@ -105,15 +110,38 @@ class SignUpViewController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                 } else {
                     
+                    let db = Firestore.firestore()
+                    
+                    // SAVING THE USER INFORMATION IN DATABASE
+                    db.collection("users").addDocument(data: ["name": name ?? "", "email": email ?? "", "password": password ?? "", "uid": result?.user.uid ?? ""]) { (error) in
+                        
+                        // HANDLING ERRORS
+                        if error != nil {
+                            SVProgressHUD.dismiss()
+                            let alertController = UIAlertController(title: "Alert", message: "There was a problem while submitting information.", preferredStyle: .alert)
+                            let okBtn = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                            
+                            alertController.addAction(okBtn)
+                            self.present(alertController, animated: true, completion: nil)
+                        } else {
+                            SVProgressHUD.dismiss()
+                            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "login") as! LoginViewController
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        }
+                    }
                 }
             }
         }
     }
     
     @IBAction func skipBtn(_ sender: UIButton) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "homeTab")
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func loginBtn(_ sender: UIButton) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "login") as! LoginViewController
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     // FOR PASSWORD VALIDATION
