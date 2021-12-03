@@ -8,9 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1963F8AFA27A68791E9C04CC /* Pods_eCONSTORE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2CB8E35F1BD1F4C43B1D7F8 /* Pods_eCONSTORE.framework */; };
+		E906EF5F2759623A008A1547 /* OneCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E906EF5E2759623A008A1547 /* OneCardViewController.swift */; };
+		E906EF622759D472008A1547 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E906EF612759D472008A1547 /* ProfileViewController.swift */; };
 		E9232CDD27462F8800BDA32B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9232CDC27462F8800BDA32B /* GoogleService-Info.plist */; };
 		E971205F2757F88F00997163 /* CatalogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971205E2757F88F00997163 /* CatalogueViewController.swift */; };
 		E97120612757FD2300997163 /* CatalogueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97120602757FD2300997163 /* CatalogueTableViewCell.swift */; };
+		E97120632758114100997163 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97120622758114100997163 /* HomeViewController.swift */; };
+		E97120652758115600997163 /* HomeCatalogueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97120642758115600997163 /* HomeCatalogueCollectionViewCell.swift */; };
+		E97120682758233400997163 /* WishlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97120672758233400997163 /* WishlistViewController.swift */; };
+		E971206B27587CE100997163 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971206A27587CE100997163 /* CartViewController.swift */; };
+		E971206D27587CF600997163 /* CartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971206C27587CF600997163 /* CartCollectionViewCell.swift */; };
 		E99CE76327470B8600380330 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99CE76227470B8600380330 /* LoginViewController.swift */; };
 		E99CE76527470B9400380330 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99CE76427470B9400380330 /* SignUpViewController.swift */; };
 		E99CE76727470BA100380330 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99CE76627470BA100380330 /* ForgotPasswordViewController.swift */; };
@@ -26,9 +33,16 @@
 /* Begin PBXFileReference section */
 		2EDDE09C1495A248FE30A186 /* Pods-eCONSTORE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eCONSTORE.debug.xcconfig"; path = "Target Support Files/Pods-eCONSTORE/Pods-eCONSTORE.debug.xcconfig"; sourceTree = "<group>"; };
 		E03953C30D45037BE8D54BA2 /* Pods-eCONSTORE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eCONSTORE.release.xcconfig"; path = "Target Support Files/Pods-eCONSTORE/Pods-eCONSTORE.release.xcconfig"; sourceTree = "<group>"; };
+		E906EF5E2759623A008A1547 /* OneCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCardViewController.swift; sourceTree = "<group>"; };
+		E906EF612759D472008A1547 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E9232CDC27462F8800BDA32B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E971205E2757F88F00997163 /* CatalogueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueViewController.swift; sourceTree = "<group>"; };
 		E97120602757FD2300997163 /* CatalogueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueTableViewCell.swift; sourceTree = "<group>"; };
+		E97120622758114100997163 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E97120642758115600997163 /* HomeCatalogueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCatalogueCollectionViewCell.swift; sourceTree = "<group>"; };
+		E97120672758233400997163 /* WishlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishlistViewController.swift; sourceTree = "<group>"; };
+		E971206A27587CE100997163 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		E971206C27587CF600997163 /* CartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCollectionViewCell.swift; sourceTree = "<group>"; };
 		E99CE76227470B8600380330 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E99CE76427470B9400380330 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E99CE76627470BA100380330 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -73,13 +87,41 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E906EF602759D462008A1547 /* Profile Tab */ = {
+			isa = PBXGroup;
+			children = (
+				E906EF612759D472008A1547 /* ProfileViewController.swift */,
+			);
+			path = "Profile Tab";
+			sourceTree = "<group>";
+		};
 		E971205D2757F87700997163 /* Home Tab */ = {
 			isa = PBXGroup;
 			children = (
 				E971205E2757F88F00997163 /* CatalogueViewController.swift */,
 				E97120602757FD2300997163 /* CatalogueTableViewCell.swift */,
+				E97120622758114100997163 /* HomeViewController.swift */,
+				E97120642758115600997163 /* HomeCatalogueCollectionViewCell.swift */,
+				E906EF5E2759623A008A1547 /* OneCardViewController.swift */,
 			);
 			path = "Home Tab";
+			sourceTree = "<group>";
+		};
+		E97120662758231900997163 /* Wishlist Tab */ = {
+			isa = PBXGroup;
+			children = (
+				E97120672758233400997163 /* WishlistViewController.swift */,
+			);
+			path = "Wishlist Tab";
+			sourceTree = "<group>";
+		};
+		E971206927587CC500997163 /* Cart Tab */ = {
+			isa = PBXGroup;
+			children = (
+				E971206A27587CE100997163 /* CartViewController.swift */,
+				E971206C27587CF600997163 /* CartCollectionViewCell.swift */,
+			);
+			path = "Cart Tab";
 			sourceTree = "<group>";
 		};
 		E99CE76127470B5200380330 /* Authentication */ = {
@@ -114,6 +156,9 @@
 		E9DBFE552745995900F33717 /* eCONSTORE */ = {
 			isa = PBXGroup;
 			children = (
+				E906EF602759D462008A1547 /* Profile Tab */,
+				E971206927587CC500997163 /* Cart Tab */,
+				E97120662758231900997163 /* Wishlist Tab */,
 				E971205D2757F87700997163 /* Home Tab */,
 				E99CE76127470B5200380330 /* Authentication */,
 				E9DBFE562745995900F33717 /* AppDelegate.swift */,
@@ -244,13 +289,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E99CE76527470B9400380330 /* SignUpViewController.swift in Sources */,
+				E97120682758233400997163 /* WishlistViewController.swift in Sources */,
 				E99CE76727470BA100380330 /* ForgotPasswordViewController.swift in Sources */,
 				E97120612757FD2300997163 /* CatalogueTableViewCell.swift in Sources */,
 				E9DBFE612745995900F33717 /* eCONSTORE.xcdatamodeld in Sources */,
 				E9DBFE5B2745995900F33717 /* ViewController.swift in Sources */,
+				E906EF622759D472008A1547 /* ProfileViewController.swift in Sources */,
+				E971206B27587CE100997163 /* CartViewController.swift in Sources */,
+				E906EF5F2759623A008A1547 /* OneCardViewController.swift in Sources */,
+				E97120632758114100997163 /* HomeViewController.swift in Sources */,
+				E971206D27587CF600997163 /* CartCollectionViewCell.swift in Sources */,
 				E971205F2757F88F00997163 /* CatalogueViewController.swift in Sources */,
 				E9DBFE572745995900F33717 /* AppDelegate.swift in Sources */,
 				E99CE76327470B8600380330 /* LoginViewController.swift in Sources */,
+				E97120652758115600997163 /* HomeCatalogueCollectionViewCell.swift in Sources */,
 				E9DBFE592745995900F33717 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

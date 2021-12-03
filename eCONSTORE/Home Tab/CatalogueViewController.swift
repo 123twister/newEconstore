@@ -55,6 +55,7 @@ class CatalogueViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func GetData()
     {
+        tableView.isHidden = true
         ref.getDocuments { (snapshot, error) in
             if let error = error {
                 // SHOW ERROR
@@ -69,6 +70,7 @@ class CatalogueViewController: UIViewController, UITableViewDelegate, UITableVie
                 
                 guard let snapshot = snapshot else { return }
                 for documents in snapshot.documents {
+                    self.tableView.isHidden = false
                     let data = documents.data()
                     let title = data["title"] as? String ?? ""
                     let image = data["image"] as? String ?? ""

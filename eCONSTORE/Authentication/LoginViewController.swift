@@ -32,6 +32,14 @@ class LoginViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if  UserDefaults.standard.bool(forKey: "LOGGEDIN") == true {
+            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "homeTab")
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     @IBAction func loginBtn(_ sender: UIButton) {
         
         SVProgressHUD.show()
@@ -53,9 +61,10 @@ class LoginViewController: UIViewController {
                     self.present(alertController, animated: true, completion: nil)
                 } else {
                     SVProgressHUD.dismiss()
+                    UserDefaults.standard.set(true, forKey: "LOGGEDIN")
                     let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "homeTab")
-                    self.view.window?.rootViewController = vc
-                    self.view.window?.makeKeyAndVisible()
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    print(Auth.auth().currentUser?.uid ?? "")
                 }
 
             }
