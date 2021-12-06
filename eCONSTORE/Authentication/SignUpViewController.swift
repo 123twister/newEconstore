@@ -10,7 +10,7 @@ import FirebaseAuth
 import Firebase
 import SVProgressHUD
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var nameTfView: UIView!
     @IBOutlet weak var emailTfView: UIView!
@@ -80,6 +80,11 @@ class SignUpViewController: UIViewController {
         emailErrorLbl.isHidden = true
         passwordErrorLbl.isHidden = true
         confirmPasswordLbl.isHidden = true
+        
+        nameTf.delegate = self
+        emailTf.delegate = self
+        passwordTf.delegate = self
+        confirmPasswordTf.delegate = self
     }
 
     @IBAction func signUpBtn(_ sender: UIButton) {
@@ -156,6 +161,15 @@ class SignUpViewController: UIViewController {
 
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailTest)
         return emailPred.evaluate(with: email)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameTf.resignFirstResponder()
+        emailTf.resignFirstResponder()
+        passwordTf.resignFirstResponder()
+        confirmPasswordTf.resignFirstResponder()
+        
+        return true
     }
     
 }

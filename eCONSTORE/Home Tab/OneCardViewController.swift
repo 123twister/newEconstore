@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import SVProgressHUD
 
 class OneCardViewController: UIViewController {
 
@@ -23,7 +24,9 @@ class OneCardViewController: UIViewController {
     
     let imagePicker = UIImagePickerController()
     var ref = DatabaseReference.init()
+    var reff: CollectionReference!
     var number = 0
+    let uid = UserDefaults.standard.string(forKey: "UID")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,7 @@ class OneCardViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         ref = Database.database().reference()
+        reff = Firestore.firestore().collection("users")
         
         conestogaIdView.layer.borderColor = UIColor(rgb: 0xE1E1E1).cgColor
         conestogaIdView.layer.borderWidth = 2
@@ -53,9 +57,62 @@ class OneCardViewController: UIViewController {
     }
 
     @IBAction func submitBtn(_ sender: UIButton) {
+        SVProgressHUD.show()
         
-        saveData()
+        if (conestogaIdTxt.text == "") || (nameTxt.text == "") || (conestogaIdTxt.text?.count ?? 0 < 7) || (conestogaIdTxt.text?.count ?? 0 > 7){
+            SVProgressHUD.dismiss()
+            conestogaIdErrLol.isHidden = false
+            nameErrLbl.isHidden = false
+            
+        } else {
+            SVProgressHUD.dismiss()
+            conestogaIdErrLol.isHidden = true
+            nameErrLbl.isHidden = true
+            
+            reff = Firestore.firestore().collection("onecard")
+            reff.getDocuments { (snapshot, error) in
+                if let error = error {
+                    // SHOW ERROR
+                    
+                    let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                    let okBtn = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                    alert.addAction(okBtn)
+                    self.present(alert, animated: true, completion: nil)
+                    
+                } else {
+                    // FETCHING DATA
+                    
+                    guard let snapshot = snapshot else { return }
+                    for documents in snapshot.documents {
+                        let data = documents.data()
+                        let name = data["name"] as? String ?? ""
+                        let onecardID = data["onecardID"] as? String ?? ""
+                        
+                        if (self.conestogaIdTxt.text == onecardID) && (self.nameTxt.text == name) {
+                            
+                            self.saveData()
+                            self.navigationController?.popViewController(animated: true)
+                        } else {
+                            let alert = UIAlertController(title: "Error", message: "Please fill in your proper details.", preferredStyle: .alert)
+                            let okBtn = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                            alert.addAction(okBtn)
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                        
+                    }
+                }
+            }
+           
+            
+        }
+        
+        
     }
+    
+    @IBAction func backBtn(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     
     func saveData()
     {
@@ -112,7 +169,33 @@ extension OneCardViewController: UIImagePickerControllerDelegate, UINavigationCo
     
     func saveImage(name: String, profileURL: URL, completion: @escaping((_ url: URL?) -> ()))
     {
-        let dict = ["profileURL": profileURL.absoluteString] as [String: Any]
+        let dict = ["profileURL": profileURL.absoluteString, "onecard": conestogaIdTxt.text ?? "", "name": nameTxt.text ?? ""] as [String: Any]
+        let db = Firestore.firestore()
+        
         self.ref.child("onecard").childByAutoId().setValue(dict)
+        reff.getDocuments { (snapshot, error) in
+            if let error = error {
+                // SHOW ERROR
+
+                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                let okBtn = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                alert.addAction(okBtn)
+                self.present(alert, animated: true, completion: nil)
+
+            } else {
+                // FETCHING DATA
+
+                guard let snapshot = snapshot else { return }
+                for documents in snapshot.documents {
+                    let data = documents.data()
+                    let userUid = data["uid"] as? String ?? ""
+
+                    if userUid == self.uid {
+                        db.collection("users").document("b49yJuPNWmqJK0gxNgT6").setData(dict, merge: true)
+                    }
+                }
+            }
+        }
     }
+
 }

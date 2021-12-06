@@ -30,7 +30,8 @@ class ProfileViewController: UIViewController {
         {
             try Auth.auth().signOut()
             UserDefaults.standard.set(false, forKey: "LOGGEDIN")
-            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.init()).instantiateViewController(withIdentifier: "login") as! LoginViewController
+            self.tabBarController?.tabBar.isHidden = true
+            let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "login") as! LoginViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }
         catch let error

@@ -78,5 +78,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
+    @IBAction func onecardBtn(_ sender: UIButton) {
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "onecard") as! OneCardViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 
 }

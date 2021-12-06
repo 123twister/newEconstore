@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 import SVProgressHUD
 
-class ForgotPasswordViewController: UIViewController {
+class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailTfView: UIView!
     @IBOutlet weak var emailTf: UITextField!
@@ -21,6 +21,8 @@ class ForgotPasswordViewController: UIViewController {
         emailTfView.layer.borderColor = UIColor(rgb: 0xE1E1E1).cgColor
         emailTfView.layer.borderWidth = 2
         emailErrorLbl.isHidden = true
+        
+        emailTf.delegate = self
     }
 
     @IBAction func submitBtn(_ sender: UIButton) {
@@ -59,4 +61,9 @@ class ForgotPasswordViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailTf.resignFirstResponder()
+        
+        return true
+    }
 }
