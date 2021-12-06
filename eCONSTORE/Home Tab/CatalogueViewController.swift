@@ -47,12 +47,12 @@ class CatalogueViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        tabBarController?.selectedIndex = 3
+        tabBarController?.selectedIndex = 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CatalogueTableViewCell
-        cell.titleLbl.text = catalogue[indexPath.row].title
+        cell.titleLbl.text = catalogue[indexPath.row].title ?? ""
         
         let imgUrl = URL(string: "\(catalogue[indexPath.row].image ?? "")")
         if let data = try? Data(contentsOf: imgUrl! ) {
