@@ -32,7 +32,7 @@ class OneCardViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        tabBarController?.tabBar.isHidden = true
         ref = Database.database().reference()
         reff = Firestore.firestore().collection("users")
         
@@ -91,6 +91,7 @@ class OneCardViewController: UIViewController {
                         if (self.conestogaIdTxt.text == onecardID) && (self.nameTxt.text == name) {
                             
                             self.saveData()
+                            self.updateShopData()
                             self.navigationController?.popViewController(animated: true)
                         } else {
                             let alert = UIAlertController(title: "Error", message: "Please fill in your proper details.", preferredStyle: .alert)
@@ -117,7 +118,7 @@ class OneCardViewController: UIViewController {
     func saveData()
     {
         self.uploadImage(self.oneCardImg.image!) { url in
-            self.saveImage(name: "OneCard", profileURL: url!){ success in
+            self.saveImage(name: self.nameTxt.text ?? "", cID: self.conestogaIdTxt.text ?? "", profileURL: url!){ success in
                 if success != nil {
                     print("Success")
                 }
@@ -126,7 +127,22 @@ class OneCardViewController: UIViewController {
         }
     }
     
-}
+    func updateShopData()
+    {
+        let db = Firestore.firestore()
+        
+        db.collection("shop").document("0yjxvJwNpSxziKkSce6Z").setData(["realPrice": 120], merge: true)
+        db.collection("shop").document("9h8BC37BKQ5z92bpTdQb").setData(["realPrice": 120], merge: true)
+        db.collection("shop").document("Ad6L99yRaEsCgNmndcd3").setData(["realPrice": 120], merge: true)
+        db.collection("shop").document("Omxm1jw7fGgZJNdxFNEg").setData(["realPrice": 120], merge: true)
+        db.collection("shop").document("bB9ZqdM0UT8nUoIoRROQ").setData(["realPrice": 120], merge: true)
+        db.collection("shop").document("eQVjOWbi49wY7l1xxdw7").setData(["realPrice": 120], merge: true)
+        db.collection("shop").document("gaSCNWJsgo0LbV8gfZDx").setData(["realPrice": 120], merge: true)
+        db.collection("shop").document("ie0Wy0ETIZScwDI6x3qh").setData(["realPrice": 120], merge: true)
+        db.collection("shop").document("vriAUHFv2nfYWqvHUDpD").setData(["realPrice": 120], merge: true)
+    }
+    
+    }
 
 extension OneCardViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -167,7 +183,7 @@ extension OneCardViewController: UIImagePickerControllerDelegate, UINavigationCo
         }
     }
     
-    func saveImage(name: String, profileURL: URL, completion: @escaping((_ url: URL?) -> ()))
+    func saveImage(name: String, cID: String, profileURL: URL, completion: @escaping((_ url: URL?) -> ()))
     {
         let dict = ["profileURL": profileURL.absoluteString, "onecard": conestogaIdTxt.text ?? "", "name": nameTxt.text ?? ""] as [String: Any]
         let db = Firestore.firestore()
@@ -186,16 +202,16 @@ extension OneCardViewController: UIImagePickerControllerDelegate, UINavigationCo
                 // FETCHING DATA
 
                 guard let snapshot = snapshot else { return }
-                for documents in snapshot.documents {
+                for documents in snapshot.documents{
                     let data = documents.data()
                     let userUid = data["uid"] as? String ?? ""
 
-                    if userUid == self.uid {
+                    if self.uid == userUid {
                         db.collection("users").document("b49yJuPNWmqJK0gxNgT6").setData(dict, merge: true)
-                    }
                 }
             }
         }
     }
 
+}
 }

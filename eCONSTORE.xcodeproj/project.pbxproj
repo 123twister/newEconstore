@@ -11,6 +11,10 @@
 		E906EF5F2759623A008A1547 /* OneCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E906EF5E2759623A008A1547 /* OneCardViewController.swift */; };
 		E906EF622759D472008A1547 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E906EF612759D472008A1547 /* ProfileViewController.swift */; };
 		E9232CDD27462F8800BDA32B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9232CDC27462F8800BDA32B /* GoogleService-Info.plist */; };
+		E92335E4275E82E3004282F5 /* CartDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92335E3275E82E3004282F5 /* CartDetailsViewController.swift */; };
+		E92335E6275E82F7004282F5 /* CartDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92335E5275E82F7004282F5 /* CartDetailsTableViewCell.swift */; };
+		E92335E8275E8312004282F5 /* CartDetailsColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92335E7275E8312004282F5 /* CartDetailsColorCollectionViewCell.swift */; };
+		E92335EA275E831E004282F5 /* CartDetailsSizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92335E9275E831E004282F5 /* CartDetailsSizeCollectionViewCell.swift */; };
 		E971205F2757F88F00997163 /* CatalogueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971205E2757F88F00997163 /* CatalogueViewController.swift */; };
 		E97120612757FD2300997163 /* CatalogueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97120602757FD2300997163 /* CatalogueTableViewCell.swift */; };
 		E97120632758114100997163 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97120622758114100997163 /* HomeViewController.swift */; };
@@ -36,6 +40,10 @@
 		E906EF5E2759623A008A1547 /* OneCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCardViewController.swift; sourceTree = "<group>"; };
 		E906EF612759D472008A1547 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E9232CDC27462F8800BDA32B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E92335E3275E82E3004282F5 /* CartDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDetailsViewController.swift; sourceTree = "<group>"; };
+		E92335E5275E82F7004282F5 /* CartDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		E92335E7275E8312004282F5 /* CartDetailsColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDetailsColorCollectionViewCell.swift; sourceTree = "<group>"; };
+		E92335E9275E831E004282F5 /* CartDetailsSizeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDetailsSizeCollectionViewCell.swift; sourceTree = "<group>"; };
 		E971205E2757F88F00997163 /* CatalogueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueViewController.swift; sourceTree = "<group>"; };
 		E97120602757FD2300997163 /* CatalogueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogueTableViewCell.swift; sourceTree = "<group>"; };
 		E97120622758114100997163 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +128,10 @@
 			children = (
 				E971206A27587CE100997163 /* CartViewController.swift */,
 				E971206C27587CF600997163 /* CartCollectionViewCell.swift */,
+				E92335E3275E82E3004282F5 /* CartDetailsViewController.swift */,
+				E92335E5275E82F7004282F5 /* CartDetailsTableViewCell.swift */,
+				E92335E7275E8312004282F5 /* CartDetailsColorCollectionViewCell.swift */,
+				E92335E9275E831E004282F5 /* CartDetailsSizeCollectionViewCell.swift */,
 			);
 			path = "Cart Tab";
 			sourceTree = "<group>";
@@ -292,11 +304,15 @@
 				E97120682758233400997163 /* WishlistViewController.swift in Sources */,
 				E99CE76727470BA100380330 /* ForgotPasswordViewController.swift in Sources */,
 				E97120612757FD2300997163 /* CatalogueTableViewCell.swift in Sources */,
+				E92335EA275E831E004282F5 /* CartDetailsSizeCollectionViewCell.swift in Sources */,
+				E92335E8275E8312004282F5 /* CartDetailsColorCollectionViewCell.swift in Sources */,
 				E9DBFE612745995900F33717 /* eCONSTORE.xcdatamodeld in Sources */,
 				E9DBFE5B2745995900F33717 /* ViewController.swift in Sources */,
 				E906EF622759D472008A1547 /* ProfileViewController.swift in Sources */,
+				E92335E4275E82E3004282F5 /* CartDetailsViewController.swift in Sources */,
 				E971206B27587CE100997163 /* CartViewController.swift in Sources */,
 				E906EF5F2759623A008A1547 /* OneCardViewController.swift in Sources */,
+				E92335E6275E82F7004282F5 /* CartDetailsTableViewCell.swift in Sources */,
 				E97120632758114100997163 /* HomeViewController.swift in Sources */,
 				E971206D27587CF600997163 /* CartCollectionViewCell.swift in Sources */,
 				E971205F2757F88F00997163 /* CatalogueViewController.swift in Sources */,

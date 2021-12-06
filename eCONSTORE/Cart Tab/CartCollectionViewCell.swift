@@ -15,4 +15,5 @@ class CartCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var realPrice: UILabel!
     @IBOutlet weak var lineView: UIView!
     
+    @IBOutlet weak var descriptionLbl: UILabel!
 }

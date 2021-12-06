@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 struct Catalogue {
     let title: String?
@@ -31,12 +32,22 @@ class CatalogueViewController: UIViewController, UITableViewDelegate, UITableVie
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.reloadData()
         GetData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tabBarController?.tabBar.isHidden = false
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return catalogue.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tabBarController?.selectedIndex = 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -56,10 +67,11 @@ class CatalogueViewController: UIViewController, UITableViewDelegate, UITableVie
     func GetData()
     {
         tableView.isHidden = true
+        SVProgressHUD.show()
         ref.getDocuments { (snapshot, error) in
             if let error = error {
                 // SHOW ERROR
-                
+                SVProgressHUD.dismiss()
                 let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
                 let okBtn = UIAlertAction(title: "Ok", style: .default, handler: nil)
                 alert.addAction(okBtn)
@@ -70,6 +82,7 @@ class CatalogueViewController: UIViewController, UITableViewDelegate, UITableVie
                 
                 guard let snapshot = snapshot else { return }
                 for documents in snapshot.documents {
+                    SVProgressHUD.dismiss()
                     self.tableView.isHidden = false
                     let data = documents.data()
                     let title = data["title"] as? String ?? ""
