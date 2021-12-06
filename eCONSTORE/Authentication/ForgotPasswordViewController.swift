@@ -2,7 +2,7 @@
 //  ForgotPasswordViewController.swift
 //  eCONSTORE
 //
-//  Created by Jay Kaushal on 19/11/21.
+//  Created by Lovepreet Singh Sandhu on 19/11/21.
 //
 
 import UIKit

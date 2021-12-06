@@ -2,7 +2,7 @@
 //  CatalogueTableViewCell.swift
 //  eCONSTORE
 //
-//  Created by Jay Kaushal on 02/12/21.
+//  Created by Yashas Bhadregowda on 02/12/21.
 //
 
 import UIKit
