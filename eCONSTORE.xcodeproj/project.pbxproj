@@ -10,6 +10,7 @@
 		1963F8AFA27A68791E9C04CC /* Pods_eCONSTORE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2CB8E35F1BD1F4C43B1D7F8 /* Pods_eCONSTORE.framework */; };
 		E906EF5F2759623A008A1547 /* OneCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E906EF5E2759623A008A1547 /* OneCardViewController.swift */; };
 		E906EF622759D472008A1547 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E906EF612759D472008A1547 /* ProfileViewController.swift */; };
+		E912A741275F004700CDEADF /* HomeShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E912A740275F004700CDEADF /* HomeShopCollectionViewCell.swift */; };
 		E9232CDD27462F8800BDA32B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9232CDC27462F8800BDA32B /* GoogleService-Info.plist */; };
 		E92335E4275E82E3004282F5 /* CartDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92335E3275E82E3004282F5 /* CartDetailsViewController.swift */; };
 		E92335E6275E82F7004282F5 /* CartDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92335E5275E82F7004282F5 /* CartDetailsTableViewCell.swift */; };
@@ -38,6 +39,7 @@
 		E03953C30D45037BE8D54BA2 /* Pods-eCONSTORE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eCONSTORE.release.xcconfig"; path = "Target Support Files/Pods-eCONSTORE/Pods-eCONSTORE.release.xcconfig"; sourceTree = "<group>"; };
 		E906EF5E2759623A008A1547 /* OneCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCardViewController.swift; sourceTree = "<group>"; };
 		E906EF612759D472008A1547 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		E912A740275F004700CDEADF /* HomeShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		E9232CDC27462F8800BDA32B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E92335E3275E82E3004282F5 /* CartDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDetailsViewController.swift; sourceTree = "<group>"; };
 		E92335E5275E82F7004282F5 /* CartDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDetailsTableViewCell.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				E97120622758114100997163 /* HomeViewController.swift */,
 				E97120642758115600997163 /* HomeCatalogueCollectionViewCell.swift */,
 				E906EF5E2759623A008A1547 /* OneCardViewController.swift */,
+				E912A740275F004700CDEADF /* HomeShopCollectionViewCell.swift */,
 			);
 			path = "Home Tab";
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			files = (
 				E99CE76527470B9400380330 /* SignUpViewController.swift in Sources */,
 				E99CE76727470BA100380330 /* ForgotPasswordViewController.swift in Sources */,
+				E912A741275F004700CDEADF /* HomeShopCollectionViewCell.swift in Sources */,
 				E97120612757FD2300997163 /* CatalogueTableViewCell.swift in Sources */,
 				E92335EA275E831E004282F5 /* CartDetailsSizeCollectionViewCell.swift in Sources */,
 				E92335E8275E8312004282F5 /* CartDetailsColorCollectionViewCell.swift in Sources */,

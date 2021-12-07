@@ -2,7 +2,7 @@
 //  SignUpViewController.swift
 //  eCONSTORE
 //
-//  Created by Sudhir Dhameliya on 19/11/21.
+//  Created by Jay Kaushal on 19/11/21.
 //
 
 import UIKit

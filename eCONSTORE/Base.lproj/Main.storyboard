@@ -833,7 +833,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="1hi-4H-rrz" customClass="CartCollectionViewCell" customModule="eCONSTORE" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="1hi-4H-rrz" customClass="HomeShopCollectionViewCell" customModule="eCONSTORE" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="180" height="248"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dkx-gZ-HNQ">
@@ -949,13 +949,13 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="180" height="248"/>
                                         <connections>
-                                            <outlet property="descriptionLbl" destination="IMt-4a-VHx" id="QSs-Oe-36Z"/>
-                                            <outlet property="discountPrice" destination="pfv-iy-XVN" id="epp-LW-UP0"/>
-                                            <outlet property="lineView" destination="NqL-Dy-8u1" id="MRh-4d-gAc"/>
-                                            <outlet property="productImg" destination="1Cb-cd-qe1" id="NJL-NS-sjC"/>
-                                            <outlet property="productName" destination="Jin-kn-VNn" id="GEd-Gv-4um"/>
-                                            <outlet property="ratingImg" destination="GOf-c9-Hvq" id="kFa-E1-dEU"/>
-                                            <outlet property="realPrice" destination="LaC-Mm-0OB" id="GiS-8h-y4Y"/>
+                                            <outlet property="descriptionLbl" destination="IMt-4a-VHx" id="bz1-Tj-fdt"/>
+                                            <outlet property="discountPrice" destination="pfv-iy-XVN" id="Pdh-vs-ki9"/>
+                                            <outlet property="lineView" destination="NqL-Dy-8u1" id="zpW-ZP-CQS"/>
+                                            <outlet property="productImg" destination="1Cb-cd-qe1" id="QNT-Iw-kwC"/>
+                                            <outlet property="productName" destination="Jin-kn-VNn" id="4k7-yY-TRM"/>
+                                            <outlet property="ratingImg" destination="GOf-c9-Hvq" id="3no-rU-owh"/>
+                                            <outlet property="realPrice" destination="LaC-Mm-0OB" id="Nn9-qV-jgu"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -2613,7 +2613,7 @@
     </scenes>
     <resources>
         <image name="5star" width="640" height="180"/>
-        <image name="arrowshape.turn.up.left.circle.fill" catalog="system" width="32" height="32"/>
+        <image name="arrowshape.turn.up.left.circle.fill" catalog="system" width="128" height="121"/>
         <image name="creditcard" catalog="system" width="128" height="88"/>
         <image name="exit" width="32" height="32"/>
         <image name="h&amp;m1" width="208" height="243"/>

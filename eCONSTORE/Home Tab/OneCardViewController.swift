@@ -131,15 +131,15 @@ class OneCardViewController: UIViewController {
     {
         let db = Firestore.firestore()
         
-        db.collection("shop").document("0yjxvJwNpSxziKkSce6Z").setData(["realPrice": 120], merge: true)
+        db.collection("shop").document("0yjxvJwNpSxziKkSce6Z").setData(["realPrice": 100], merge: true)
         db.collection("shop").document("9h8BC37BKQ5z92bpTdQb").setData(["realPrice": 120], merge: true)
-        db.collection("shop").document("Ad6L99yRaEsCgNmndcd3").setData(["realPrice": 120], merge: true)
-        db.collection("shop").document("Omxm1jw7fGgZJNdxFNEg").setData(["realPrice": 120], merge: true)
-        db.collection("shop").document("bB9ZqdM0UT8nUoIoRROQ").setData(["realPrice": 120], merge: true)
-        db.collection("shop").document("eQVjOWbi49wY7l1xxdw7").setData(["realPrice": 120], merge: true)
-        db.collection("shop").document("gaSCNWJsgo0LbV8gfZDx").setData(["realPrice": 120], merge: true)
-        db.collection("shop").document("ie0Wy0ETIZScwDI6x3qh").setData(["realPrice": 120], merge: true)
-        db.collection("shop").document("vriAUHFv2nfYWqvHUDpD").setData(["realPrice": 120], merge: true)
+        db.collection("shop").document("Ad6L99yRaEsCgNmndcd3").setData(["realPrice": 152], merge: true)
+        db.collection("shop").document("Omxm1jw7fGgZJNdxFNEg").setData(["realPrice": 130], merge: true)
+        db.collection("shop").document("bB9ZqdM0UT8nUoIoRROQ").setData(["realPrice": 90], merge: true)
+        db.collection("shop").document("eQVjOWbi49wY7l1xxdw7").setData(["realPrice": 100], merge: true)
+        db.collection("shop").document("gaSCNWJsgo0LbV8gfZDx").setData(["realPrice": 200], merge: true)
+        db.collection("shop").document("ie0Wy0ETIZScwDI6x3qh").setData(["realPrice": 180], merge: true)
+        db.collection("shop").document("vriAUHFv2nfYWqvHUDpD").setData(["realPrice": 170], merge: true)
     }
     
     }

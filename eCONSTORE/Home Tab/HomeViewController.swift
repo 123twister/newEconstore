@@ -34,40 +34,43 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         shopCollectionView.delegate = self
         shopCollectionView.dataSource = self
         
-        
+        GetData()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         tabBarController?.tabBar.isHidden = false
-        GetData()
+        
     }
         
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if (collectionView == catalogueCollectionView) {
-            return catalogue.count
-        }
+        if (collectionView == shopCollectionView) {
             return cart.count
+        }
+            return catalogue.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = catalogueCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeCatalogueCollectionViewCell
+        let catalogueCell = catalogueCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeCatalogueCollectionViewCell
         
-        cell.catalogueTitle.text = catalogue[indexPath.row].title
+        catalogueCell.catalogueTitle.text = catalogue[indexPath.row].title ?? ""
+//        print(catalogue[indexPath.row].title ?? "")
         
         let imgUrl = URL(string: "\(catalogue[indexPath.row].image ?? "")")
         if let data = try? Data(contentsOf: imgUrl! ) {
             DispatchQueue.main.async {
-                cell.catalogueImg.image = UIImage(data: data)
+                catalogueCell.catalogueImg.image = UIImage(data: data)
             }
         }
         
         if (collectionView == shopCollectionView) {
-            let cell = shopCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CartCollectionViewCell
+            let shopCell = shopCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeShopCollectionViewCell
             
             let carts = cart[indexPath.row]
             
-            cell.productName.text = carts.title
-            cell.descriptionLbl.text = carts.description
+            shopCell.productName.text = carts.title
+            shopCell.descriptionLbl.text = carts.description
             
             let newUrl = URL(string: "https://firebasestorage.googleapis.com/v0/b/econstore-7b317.appspot.com/o/Screenshot%202021-12-01%20at%2012.28.41%20AM.png?alt=media&token=4a1e8997-2dad-4f30-8cd0-9ea876f6c249")
             
@@ -75,48 +78,48 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
             if let data = try? Data(contentsOf: imgUrl! ) {
                 DispatchQueue.main.async {
-                    cell.productImg.image = UIImage(data: data)
+                    shopCell.productImg.image = UIImage(data: data)
                 }
             }
             
             if carts.rating == 1
             {
-                cell.ratingImg.image = #imageLiteral(resourceName: "1star")
+                shopCell.ratingImg.image = #imageLiteral(resourceName: "1star")
             }
             if carts.rating == 2
             {
-                cell.ratingImg.image = #imageLiteral(resourceName: "2star")
+                shopCell.ratingImg.image = #imageLiteral(resourceName: "2star")
             }
             if carts.rating == 3
             {
-                cell.ratingImg.image = #imageLiteral(resourceName: "3star")
+                shopCell.ratingImg.image = #imageLiteral(resourceName: "3star")
             }
             if carts.rating == 4
             {
-                cell.ratingImg.image = #imageLiteral(resourceName: "4star")
+                shopCell.ratingImg.image = #imageLiteral(resourceName: "4star")
             }
             if carts.rating == 5
             {
-                cell.ratingImg.image = #imageLiteral(resourceName: "5star")
+                shopCell.ratingImg.image = #imageLiteral(resourceName: "5star")
             }
             
             if carts.realPrice == 0 {
-                cell.realPrice.isHidden = true
-                cell.lineView.isHidden = true
-                cell.discountPrice.textColor = .black
-                cell.discountPrice.text = "$\(carts.discountedPrice ?? 0)"
+                shopCell.realPrice.isHidden = true
+                shopCell.lineView.isHidden = true
+                shopCell.discountPrice.textColor = .black
+                shopCell.discountPrice.text = "$\(carts.discountedPrice ?? 0)"
             } else {
-                cell.realPrice.isHidden = false
-                cell.realPrice.text = "$\(carts.realPrice ?? 0)"
-                cell.lineView.isHidden = false
-                cell.discountPrice.textColor = .red
-                cell.discountPrice.text = "$\(carts.discountedPrice ?? 0)"
+                shopCell.realPrice.isHidden = false
+                shopCell.realPrice.text = "$\(carts.realPrice ?? 0)"
+                shopCell.lineView.isHidden = false
+                shopCell.discountPrice.textColor = .red
+                shopCell.discountPrice.text = "$\(carts.discountedPrice ?? 0)"
             }
             
-            return cell
+            return shopCell
         }
         
-        return cell
+        return catalogueCell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

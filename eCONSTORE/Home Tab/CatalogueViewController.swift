@@ -2,7 +2,7 @@
 //  CatalogueViewController.swift
 //  eCONSTORE
 //
-//  Created by Yashas Bhadregowda on 02/12/21.
+//  Created by Jay Kaushal on 02/12/21.
 //
 
 import UIKit
